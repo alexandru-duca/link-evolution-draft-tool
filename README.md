@@ -12,7 +12,7 @@ You need Python 3.10 or higher installed. Also you need to have the game install
 
 To use the tool follow these steps:
 
-- Execute `remove-starter-decks-and-banlist.py` in the folder where the games  executable is located. 
+- Execute `remove-initial-decks.py` and `remove-banlist.py` in the folder where the games executable is located. 
   You can find this in steam by right-clicking the game and selecting "Manage > Browse local files".
 
 - Copy `draft-tool.py` and `passcode.csv` to the location of your save file.
