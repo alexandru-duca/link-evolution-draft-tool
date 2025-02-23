@@ -225,7 +225,7 @@ with open(OUTFILES + ".toc", "w", newline="\n") as f:
 
 # Step 4: Clean up
 print("Clean up.")
-print("Deleting working directory: ", FILENAME)
+print("Deleting working directory:", FILENAME)
 shutil.rmtree(FILENAME)
 print("Deleting old files:", FILENAME + ".toc", FILENAME + ".dat")
 os.remove(FILENAME + ".toc")
