@@ -1,29 +1,27 @@
-# link-evolution-draft-tool
-Link Evolution Draft Tool
+# Link Evolution Draft Tool
 
-This tool is intended to be used with "Yu-Gi-Oh! Legacy of the Duelist : Link Evolution".
-It's purpose is to enable deckbuilding after a completed draft, by making only cards from a set of `.ydk` files available in the in-game deck-builder.
+This tool is intended to be used with [Yu-Gi-Oh! Legacy of the Duelist : Link Evolution](https://store.steampowered.com/app/1150640/YuGiOh_Legacy_of_the_Duelist__Link_Evolution/) (not [Yu-Gi-Oh! Legacy of the Duelist](https://store.steampowered.com/app/480650/YuGiOh_Legacy_of_the_Duelist/)). Its purpose is to make the game's deck builder only feature cards from your `.ydk` files, e.g. cards drafted with the [Yu-Gi-Oh! Pack Simulator](https://ygoprodeck.com/pack-sim/).
+
+**This tool will erase your game progress! All your cards will be replaced with the content of your `.ydk` files!**
+
+Two additional Python scripts are provided to establish an environment suitable for drafting:
+- `remove-initial-decks.py`: Cards from starter are always available in the deck builder. This script removes all starter decks.
+- `remove-banlist.py`: The game has a ["custom Forbidden and Limited list"](https://yugipedia.com/wiki/Yu-Gi-Oh!_Legacy_of_the_Duelist:_Link_Evolution#Cards). This script removes the banlist.
 
 # Preliminaries
 
-You need Python 3.10 or higher installed. Also you need to have the game installed. Explanations bellow assume that you installed it through steam.
+- Buy [Yu-Gi-Oh! Legacy of the Duelist : Link Evolution](https://store.steampowered.com/app/1150640/YuGiOh_Legacy_of_the_Duelist__Link_Evolution/) on [Steam](https://store.steampowered.com/about/) and start the game at least once.
+- Install the newest version of [Python](https://www.python.org/downloads/).
 
 # Use
 
 To use the tool follow these steps:
 
-- Execute `remove-initial-decks.py` and `remove-banlist.py` in the folder where the games executable is located. 
-  You can find this in steam by right-clicking the game and selecting "Manage > Browse local files".
+- Run `remove-initial-decks.py` and `remove-banlist.py` in the folder of the game's executable `YuGiOh.exe`. You can find it by right-clicking the game in your Steam library and selecting "Manage > Browse local files".
 
-- Copy `draft-tool.py` and `passcode.csv` to the location of your save file.
+- Move `draft-tool.py` and `passcode.csv` into the folder of the game's save file `savegame.dat`.
   
-  Under Windows this usually is:
-  ```
-  \path\to\steam\userdata\<User-ID>\1150640\remote
-  ```
-  Under Linux it may depend on your distribution, using Debian it is:
-  ```
-  ~/.steam/debian-installation/userdata/<User-ID>/1150640/remote
-  ```
-  Next create a directory `draft` there and place your `.ydk` files into it.
-  Finally execute `draft-tool.py`.
+  - Windows: `\path\to\steam\userdata\<User-ID>\1150640\remote`
+  - Debian: `~/.steam/debian-installation/userdata/<User-ID>/1150640/remote`
+
+  In it, create a new folder named `draft` and place your `.ydk` files into it. Finally, run `draft-tool.py`.
